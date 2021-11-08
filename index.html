@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+   <input type="text" id="input1"><input type="checkbox" name="input1" id="checkbox1"/>
+   <input type="text" id="input2"><input type="checkbox" name="input2" id="checkbox2"/>
+   <input type="text" id="input3"><input type="checkbox" name="input3" id="checkbox3"/>
+   <br/>
+   <button onclick="hasil('plus')">+</button>
+   <button onclick="hasil('minus')">-</button>
+   <button onclick="hasil('kali')">X</button>
+   <button onclick="hasil('bagi')">/</button>
+   <br/>
+   <p>Hasil :</p>  <span id="tes"></span>
+   <script>
+       function hasil(jenis){
+            
+            var input1 = document.getElementById('input1').value;
+            var input2 = document.getElementById('input2').value;
+            var input3 = document.getElementById('input3').value;
+            var result;
+            if(document.getElementById("checkbox1").checked === false && document.getElementById('checkbox2').checked === false && document.getElementById('checkbox3').checked === false){
+                 alert("silahkan memilih minimal 2 checklist");
+            }else if(document.getElementById("checkbox1").checked === true && document.getElementById('checkbox2').checked === false && document.getElementById('checkbox3').checked === false){
+                 alert("silahkan memilih minimal 2 checklist");
+            }else if(document.getElementById("checkbox1").checked === false && document.parseInt(input1)getElementById('checkbox2').checked === true && document.getElementById('checkbox3').checked === false){
+                alert("silahkan memilih minimal 2 checklist");
+            }else if(document.getElementById("checkbox1").checked === false && document.getElementById('checkbox2').checked === false && document.getElementById('checkbox3').checked === true){
+                alert("silahkan memilih minimal 2 checklist");
+            }else if(document.getElementById("checkbox1").checked === true && document.getElementById('checkbox2').checked === true && document.getElementById('checkbox3').checked === false){
+                if(jenis === 'plus'){
+                   document.getElementById('tes').innerHTML = parseInt(input1 + input2);
+                }
+
+                if(jenis === 'minus'){
+                    document.getElementById('tes').innerHTML = parseInt(input1 - input2); 
+                }
+
+                if(jenis === 'kali'){
+                    document.getElementById('tes').innerHTML = parseInt(input1 * input2);
+                }
+
+                if(jenis === 'bagi'){
+                    document.getElementById('tes').innerHTML = parseFloat(input1 / input2);
+                } 
+            }else if(document.getElementById("checkbox1").checked === false && document.getElementById('checkbox2').checked === true && document.getElementById('checkbox3').checked === true){
+                if(jenis === 'plus'){
+                   document.getElementById('tes').innerHTML = parseInt(input2 + input3);
+                }
+
+                if(jenis === 'minus'){
+                    document.getElementById('tes').innerHTML = parseInt(input2 - input3); 
+                }
+
+                if(jenis === 'kali'){
+                    document.getElementById('tes').innerHTML = parseInt(input2 * input3);
+                }
+
+                if(jenis === 'bagi'){
+                    document.getElementById('tes').innerHTML = parseFloat(input2 / input3);
+                } 
+            }else{   
+                if(jenis === 'plus'){
+                   document.getElementById('tes').innerHTML = parseInt(input1) + parseInt(input2) + parseInt(input3); 
+                }
+
+                if(jenis === 'minus'){
+                    document.getElementById('tes').innerHTML = parseInt(input1 - input2 - input3); 
+                }
+
+                if(jenis === 'kali'){
+                    document.getElementById('tes').innerHTML = parseInt(input1 * input2 * input3); 
+                }
+
+                if(jenis === 'bagi'){
+                    document.getElementById('tes').innerHTML = parseFloat(input1 / input2 / input3);
+                }
+            }
+      
+       }
+       
+       
+   </script>
+</body>
+</html>
